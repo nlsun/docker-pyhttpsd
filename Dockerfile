@@ -9,4 +9,4 @@ RUN apt-get update && \
 
 COPY start server.py /
 
-CMD ["./start"]
+CMD ["/start"]
