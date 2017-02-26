@@ -1,0 +1,6 @@
+#!/bin/bash
+set -euo pipefail
+
+openssl req -new -x509 -keyout server.pem -out server.pem -days 365 -nodes -subj "/C=NL/ST=Zuid Holland/L=Rotterdam/O=Example/OU=Example/CN=example.com"
+
+exec ./server.py "$@"
