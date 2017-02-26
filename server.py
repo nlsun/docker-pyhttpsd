@@ -9,6 +9,8 @@ port = 443
 if len(sys.argv) >= 2:
     port = int(sys.argv[1])
 
+print("listening on {}".format(port))
+
 httpd = HTTPServer(('0.0.0.0', port), SimpleHTTPRequestHandler)
 
 httpd.socket = ssl.wrap_socket (httpd.socket, certfile='server.pem', server_side=True)
